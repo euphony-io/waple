@@ -1,12 +1,15 @@
-package com.euphony.waple.home
+package com.euphony.waple.find_wifi
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 
-class HomeFragment() : Fragment() {
+class FindWifiFragment : Fragment() {
+
+    private val viewModel: FindWifiViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
