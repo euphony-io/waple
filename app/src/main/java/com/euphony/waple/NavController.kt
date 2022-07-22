@@ -27,14 +27,9 @@ fun NavController() {
             )
             {
                 composable(route = Screen.HomeScreen.route) {
-                    HomeScreen(
-                        addWifiClick = {
-                            navController.navigate(Screen.AddWifiScreen.route)
-                        },
-                        findWifiClick = {
-                            navController.navigate(Screen.FindWifiScreen.route)
-                        }
-                    )
+                    HomeScreen {
+                        navController.navigate(it.route)
+                    }
                 }
                 composable(route = Screen.AddWifiScreen.route) {
                     AddWifiScreen()
