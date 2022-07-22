@@ -15,6 +15,7 @@ object Versions {
     const val LIFECYCLE_KTX = "2.4.1"
     const val ANDROIDX_APPCOMPAT = "1.4.1"
     const val ANDROID_MATERIAL = "1.5.0"
+    const val NAVIGATION = "2.5.0"
 
     const val COMPOSE = "1.1.0-beta01"
     const val COMPOSE_ACTIVITY = "1.5.0"
