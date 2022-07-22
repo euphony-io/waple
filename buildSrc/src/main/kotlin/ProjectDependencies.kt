@@ -47,6 +47,7 @@ object ProjectDependencies {
 
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
+        const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINE}"
         const val ANDROIDX_JUNIT = "androidx.test.ext:junit:${Versions.ANDROIDX_JUNIT}"
         const val ANDROIDX_ESPRESSO =
             "androidx.test.espresso:espresso-core:${Versions.ANDROIDX_ESPRESSO}"
@@ -73,8 +74,9 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_UI_TOOL)
         implementation(Compose.COMPOSE_UI_TOOL_PREVIEW)
         implementation(Compose.COMPOSE_VIEWMODEL)
-        implementation(Test.JUNIT)
         implementation(Compose.COMPOSE_MATERIAL3)
+        testImplementation(Test.JUNIT)
+        testImplementation(Test.COROUTINE)
         androidTestImplementation(Test.ANDROIDX_JUNIT)
         androidTestImplementation(Test.ANDROIDX_ESPRESSO)
     }
