@@ -3,6 +3,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 object ProjectDependencies {
     object Kotlin {
         const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+        const val MOSHI = "com.squareup.moshi:moshi:${Versions.MOSHI}"
     }
 
     object Euphony {
@@ -56,6 +57,7 @@ object ProjectDependencies {
     fun DependencyHandler.common() {
         coreLibraryDesugaring(Android.DESUGAR_LIBS)
         implementation(Kotlin.KOTLIN)
+        implementation(Kotlin.MOSHI)
         implementation(Euphony.EUPHONY)
         implementation(Android.CORE_KTX)
         implementation(Android.LIFECYCLE_KTX)
@@ -75,8 +77,8 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_UI_TOOL_PREVIEW)
         implementation(Compose.COMPOSE_VIEWMODEL)
         implementation(Compose.COMPOSE_MATERIAL3)
+        implementation(Test.COROUTINE)
         testImplementation(Test.JUNIT)
-        testImplementation(Test.COROUTINE)
         androidTestImplementation(Test.ANDROIDX_JUNIT)
         androidTestImplementation(Test.ANDROIDX_ESPRESSO)
     }

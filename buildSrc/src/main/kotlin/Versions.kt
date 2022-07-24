@@ -6,6 +6,7 @@ object Versions {
     const val VERSION_NAME = "1.0"
 
     const val KOTLIN = "1.6.10"
+    const val MOSHI = "1.13.0"
     const val EUPHONY = "0.7.1.6"
     const val DESUGAR_LIBS = "1.1.5"
     const val DATASTORE = "1.0.0"
