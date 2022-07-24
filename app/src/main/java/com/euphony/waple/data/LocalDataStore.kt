@@ -17,9 +17,9 @@ class LocalDataStore(
     fun <T> toList(type: ParameterizedType, json: String) =
         moshi.adapter<List<T>>(type).fromJson(json) ?: emptyList()
 
-    inline fun <reified T> getList(key: Preferences.Key<String>): Flow<List<T>> =
+    inline fun <reified T> getList(key: String): Flow<List<T>> =
         dataStore.data.map {
-            val json = it[key] ?: ""
+            val json = it[stringPreferencesKey(key)] ?: ""
             try {
                 toList(
                     Types.newParameterizedType(List::class.java, T::class.java),
