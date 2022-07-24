@@ -51,6 +51,12 @@ class LocalDataStoreTest {
 
     @Test
     fun test_saveIntData() = testScope.runTest {
+        localDataStore.saveIntData("int", 222)
+        assertEquals(222, localDataStore.getIntData("int").firstOrNull())
+    }
+
+    @Test
+    fun test_saveBooleanData() = testScope.runTest {
         localDataStore.saveBooleanData("boolean", true)
         assertEquals(true, localDataStore.getBooleanData("boolean").firstOrNull())
     }
