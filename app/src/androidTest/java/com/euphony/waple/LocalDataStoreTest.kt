@@ -39,7 +39,7 @@ class LocalDataStoreTest {
     }
 
     @After
-    fun tearDown() {
+    fun finishTest() {
         Dispatchers.resetMain()
     }
 
