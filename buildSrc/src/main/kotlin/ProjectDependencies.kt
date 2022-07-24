@@ -77,8 +77,8 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_UI_TOOL_PREVIEW)
         implementation(Compose.COMPOSE_VIEWMODEL)
         implementation(Compose.COMPOSE_MATERIAL3)
+        implementation(Test.COROUTINE)
         testImplementation(Test.JUNIT)
-        testImplementation(Test.COROUTINE)
         androidTestImplementation(Test.ANDROIDX_JUNIT)
         androidTestImplementation(Test.ANDROIDX_ESPRESSO)
     }
