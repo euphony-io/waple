@@ -19,6 +19,11 @@ object ProjectDependencies {
         const val ANDROIDX_APPCOMPAT = "androidx.appcompat:appcompat:${Versions.ANDROIDX_APPCOMPAT}"
         const val ANDROID_MATERIAL =
             "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
+        const val NAVIGATION_FRAGMENT =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
+        const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
+        const val NAVIGATION_COMPOSE =
+            "androidx.navigation:navigation-compose:${Versions.NAVIGATION}"
     }
 
     object Compose {
@@ -42,6 +47,7 @@ object ProjectDependencies {
 
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
+        const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINE}"
         const val ANDROIDX_JUNIT = "androidx.test.ext:junit:${Versions.ANDROIDX_JUNIT}"
         const val ANDROIDX_ESPRESSO =
             "androidx.test.espresso:espresso-core:${Versions.ANDROIDX_ESPRESSO}"
@@ -57,6 +63,9 @@ object ProjectDependencies {
         implementation(Android.DATASTORE)
         implementation(Android.ANDROIDX_APPCOMPAT)
         implementation(Android.ANDROID_MATERIAL)
+        implementation(Android.NAVIGATION_FRAGMENT)
+        implementation(Android.NAVIGATION_UI)
+        implementation(Android.NAVIGATION_COMPOSE)
         implementation(Compose.COMPOSE_UI)
         implementation(Compose.COMPOSE_ACTIVITY)
         implementation(Compose.COMPOSE_FOUNDATION)
@@ -65,8 +74,9 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_UI_TOOL)
         implementation(Compose.COMPOSE_UI_TOOL_PREVIEW)
         implementation(Compose.COMPOSE_VIEWMODEL)
-        implementation(Test.JUNIT)
         implementation(Compose.COMPOSE_MATERIAL3)
+        testImplementation(Test.JUNIT)
+        testImplementation(Test.COROUTINE)
         androidTestImplementation(Test.ANDROIDX_JUNIT)
         androidTestImplementation(Test.ANDROIDX_ESPRESSO)
     }
