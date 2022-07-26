@@ -6,6 +6,7 @@ object Versions {
     const val VERSION_NAME = "1.0"
 
     const val KOTLIN = "1.6.10"
+    const val MOSHI = "1.13.0"
     const val EUPHONY = "0.7.1.6"
     const val DESUGAR_LIBS = "1.1.5"
     const val DATASTORE = "1.0.0"
@@ -24,6 +25,7 @@ object Versions {
     const val COMPOSE_LIFECYCLE_VIEWMODEL = "1.0.0-alpha07"
 
     const val JUNIT = "4.13.2"
+    const val COROUTINE = "1.6.4"
     const val ANDROIDX_JUNIT = "1.1.3"
     const val ANDROIDX_ESPRESSO = "3.4.0"
 }

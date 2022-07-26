@@ -16,13 +16,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
+import com.euphony.waple.Screen
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
 fun HomeScreen(
-    addWifiClick: () -> Unit,
-    findWifiClick: () -> Unit,
+    startScreenBtnClick: (Screen) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -45,12 +45,12 @@ fun HomeScreen(
             fontWeight = FontWeight.Bold
         )
         HomeButton(
-            onClick = addWifiClick,
+            onClick = { startScreenBtnClick(Screen.AddWifiScreen) },
             backgroundColor = Yellow,
             text = stringResource(id = R.string.add_wifi)
         )
         HomeButton(
-            onClick = findWifiClick,
+            onClick = { startScreenBtnClick(Screen.FindWifiScreen) },
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.find_wifi)
         )
