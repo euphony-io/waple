@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
-fun HomeButton(
+fun RectButton(
     onClick: () -> Unit,
     text: String,
     backgroundColor: Color = Yellow,
