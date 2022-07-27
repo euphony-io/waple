@@ -15,6 +15,7 @@ import com.euphony.waple.Screen
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.TextField
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -52,7 +53,7 @@ fun EnterPINScreen(
                     .fillMaxWidth()
             ) {
 
-                OutlinedTectField(
+                OutlinedTextField(
                     modifier = java.lang.reflect.Modifier.fillMaxWidth(),
                     value = pinInput,
                     singleLine = true,

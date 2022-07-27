@@ -3,6 +3,6 @@
     <string name="add_wifi">WI-FI 등록</string>
     <string name="find_wifi">WI-FI 찾기</string>
     <string name="app_description">와이파이 비밀번호 공유 서비스</string>
-    <string name="enter_PIN" />
-    <string name="wifi_list" />
+    <string name="enter_PIN">PIN 번호 입력</string>
+    <string name="wifi_list">WI-FI 목록</string>
 </resources>
