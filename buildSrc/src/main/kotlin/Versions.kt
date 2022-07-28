@@ -23,6 +23,7 @@ object Versions {
     const val COMPOSE_MATERIAL = "1.2.0-alpha04"
     const val COMPOSE_MATERIAL3 = "1.0.0-alpha02"
     const val COMPOSE_LIFECYCLE_VIEWMODEL = "1.0.0-alpha07"
+    const val COMPOSE_RUNTIME_LIVEDATA = "1.0.0-beta07"
 
     const val JUNIT = "4.13.2"
     const val COROUTINE = "1.6.4"
