@@ -18,21 +18,15 @@ import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
 import com.euphony.waple.find_wifi.FindWifiViewModel
+import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
 fun FindWifiScreen(
-    startScreenBtnClick: (Screen) -> Unit,
+    viewModel: FindWifiViewModel,
+    startScreenBtnClick: (Screen) -> Unit
 ) {
-    val viewModel = FindWifiViewModel()
     val listenResult by viewModel.listenResult.observeAsState("")
-    viewModel.listen()
-    if (!listenResult.isEmpty()) {
-        println("result is not empty")
-        viewModel.finish()
-        startScreenBtnClick(Screen.HomeScreen)
-    }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,6 +46,17 @@ fun FindWifiScreen(
                 .height(80.dp),
             painter = painterResource(id = R.drawable.waffle2),
             contentDescription = "waffle2"
+        )
+        HomeButton(
+            onClick = {
+                if (listenResult.isNotEmpty()) {
+                    startScreenBtnClick(Screen.HomeScreen)
+                } else {
+                    startScreenBtnClick(Screen.FindWifiFailScreen)
+                }
+            },
+            backgroundColor = Color.Gray,
+            text = stringResource(id = R.string.result)
         )
     }
 }

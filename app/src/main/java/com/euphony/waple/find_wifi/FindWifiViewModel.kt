@@ -9,30 +9,24 @@ import euphony.lib.transmitter.EuTxManager
 
 class FindWifiViewModel : ViewModel() {
 
-    private val txManager: EuTxManager by lazy {
-        EuTxManager()
-    }
-    private val rxManager: EuRxManager by lazy {
-        EuRxManager()
-    }
+    private val txManager: EuTxManager = EuTxManager()
+    private val rxManager: EuRxManager = EuRxManager()
 
-    private val _isListening = MutableLiveData(false)
-    val isListening get() = _isListening
-
-    private val _listenResult = MutableLiveData("")
+    private var _listenResult = MutableLiveData("")
     val listenResult get() = _listenResult
 
     fun listen() {
+        _listenResult = MutableLiveData("")
         rxManager.listen()
-        println("listen start")
+        Log.i("listen start", "listen start")
         rxManager.acousticSensor = AcousticSensor {
-            println("receive data: " + it)
+            Log.i("receive data", it)
             _listenResult.postValue(it)
-            _isListening.postValue(true)
         }
+
     }
 
-    fun finish(){
+    fun finish() {
         rxManager.finish()
     }
 

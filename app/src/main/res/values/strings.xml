@@ -6,4 +6,5 @@
     <string name="app_description">와이파이 비밀번호 공유 서비스</string>
     <string name="look_for_wifi">WI-FI 검색중입니다</string>
     <string name="look_for_wifi_fail">WI-FI 검색 실패</string>
+    <string name="result">결과 확인</string>
 </resources>
