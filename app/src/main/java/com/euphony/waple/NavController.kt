@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.euphony.waple.add_wifi.ui.AddWifiScreen
 import com.euphony.waple.find_wifi.ui.FindWifiScreen
+import com.euphony.waple.find_wifi_fail.ui.FindWifiFailScreen
 import com.euphony.waple.home.ui.HomeScreen
 import com.euphony.waple.ui.theme.WapleTheme
 
@@ -35,7 +36,14 @@ fun NavController() {
                     AddWifiScreen()
                 }
                 composable(route = Screen.FindWifiScreen.route) {
-                    FindWifiScreen()
+                    FindWifiScreen {
+                        navController.navigate(it.route)
+                    }
+                }
+                composable(route = Screen.FindWifiFailScreen.route) {
+                    FindWifiFailScreen{
+                        navController.navigate(it.route)
+                    }
                 }
             }
         }
