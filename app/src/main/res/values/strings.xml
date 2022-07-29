@@ -12,4 +12,6 @@
     <string name="store_example">카페저스트코</string>
     <string name="pw_example">a12345678</string>
     <string name="pin_num">PIN 번호</string>
+    <string name="wifi_name_hint">iptime5G</string>
+    <string name="store_name_hint">스타벅스 강남점</string>
 </resources>
