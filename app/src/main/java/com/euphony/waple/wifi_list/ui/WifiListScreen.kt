@@ -50,7 +50,7 @@ fun WifiListScreen() {
             contentPadding = PaddingValues(12.dp),
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.),
+                painter = painterResource(id = R.drawable.waffle2),
                 //와플 이미지 추가
                 contentDescription = ""
             )
