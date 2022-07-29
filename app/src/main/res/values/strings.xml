@@ -5,4 +5,10 @@
     <string name="app_description">와이파이 비밀번호 공유 서비스</string>
     <string name="enter_PIN">PIN 번호 입력</string>
     <string name="wifi_list">WI-FI 목록</string>
+    <string name="submit">확인</string>
+    <string name="available_wifi">사용 가능한 Wi-Fi 목록</string>
+    <string name="to_home">홈화면으로</string>
+    <string name="wifi_example">myLGnet07</string>
+    <string name="store_example">카페저스트코</string>
+    <string name="pin_num">PIN 번호</string>
 </resources>
