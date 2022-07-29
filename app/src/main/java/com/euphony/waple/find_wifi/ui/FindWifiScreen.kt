@@ -4,8 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,6 +26,8 @@ fun FindWifiScreen(
     startScreenBtnClick: (Screen) -> Unit
 ) {
     val listenResult by viewModel.listenResult.observeAsState("")
+    val listenFinished by viewModel.listenFinished.observeAsState(false)
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,16 +48,29 @@ fun FindWifiScreen(
             painter = painterResource(id = R.drawable.waffle2),
             contentDescription = "waffle2"
         )
-        RectButton(
-            onClick = {
-                if (listenResult.isNotEmpty()) {
+
+        if (listenFinished) {
+            RectButton(
+                onClick = {
+                    if (listenResult.isNotEmpty()) {
+                        startScreenBtnClick(Screen.HomeScreen)
+                    } else {
+                        startScreenBtnClick(Screen.FindWifiFailScreen)
+                        viewModel.finish()
+                    }
+                },
+                backgroundColor = Yellow,
+                text = stringResource(id = R.string.result)
+            )
+        } else {
+            RectButton(
+                onClick = {
+                    viewModel.finish()
                     startScreenBtnClick(Screen.HomeScreen)
-                } else {
-                    startScreenBtnClick(Screen.FindWifiFailScreen)
-                }
-            },
-            backgroundColor = Color.Gray,
-            text = stringResource(id = R.string.result)
-        )
+                },
+                backgroundColor = Color.Gray,
+                text = stringResource(id = R.string.cancel)
+            )
+        }
     }
 }
