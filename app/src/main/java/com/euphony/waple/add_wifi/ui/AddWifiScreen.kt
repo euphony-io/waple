@@ -22,9 +22,9 @@ import com.euphony.waple.ui.component.TitleText
 @Composable
 fun AddWifiScreen() {
 
-    var wifiFieldCount by remember { mutableStateOf(WIFI_MIN_COUNT) }
-
     val viewModel = AddWifiViewModel()
+
+    var wifiFieldCount by remember { mutableStateOf(WIFI_MIN_COUNT) }
 
     val scrollState = rememberScrollState()
 
