@@ -10,5 +10,6 @@
     <string name="to_home">홈화면으로</string>
     <string name="wifi_example">myLGnet07</string>
     <string name="store_example">카페저스트코</string>
+    <string name="pw_example">a12345678</string>
     <string name="pin_num">PIN 번호</string>
 </resources>
