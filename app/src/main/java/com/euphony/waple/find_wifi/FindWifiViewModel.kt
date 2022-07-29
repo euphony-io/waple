@@ -18,7 +18,7 @@ class FindWifiViewModel : ViewModel() {
     fun listen() {
         _listenResult = MutableLiveData("")
         rxManager.listen()
-        Log.i("listen start", "listen start")
+        Log.i("listen", "start")
         rxManager.acousticSensor = AcousticSensor {
             Log.i("receive data", it)
             _listenResult.postValue(it)
@@ -27,6 +27,7 @@ class FindWifiViewModel : ViewModel() {
     }
 
     fun finish() {
+        Log.i("listen", "finish")
         rxManager.finish()
     }
 
