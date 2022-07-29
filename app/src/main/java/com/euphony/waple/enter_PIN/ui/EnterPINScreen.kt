@@ -34,16 +34,13 @@ fun EnterPINScreen(
             fontWeight = FontWeight.Bold,
             fontSize = 16.sp
         )
+        
+      TextFieldWithLabel(
+            titleResId = R.string.pin_num,
+            hintResId = R.string.pin_hint,
+            keyboardType = KeyboardType.Number
+        ){}
 
-        OutlinedTextField(
-            singleLine = true,
-            modifier = Modifier.fillMaxWidth(),
-            Spacer(modifier= Modifier.height(16.dp)),
-            maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = "PIN 번호",
-            placeHolder = "ex)1234"
-        )
 
         HomeButton(
             onClick = {startScreenBtnClick()},
