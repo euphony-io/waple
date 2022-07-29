@@ -2,8 +2,10 @@ package com.euphony.waple.wifi_list.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
@@ -31,14 +34,14 @@ fun WifiListScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "사용 가능한 Wi-Fi 목록",
+            text = stringResource(id = R.string.available_wifi),
             color = Color.Gray,
             fontWeight = FontWeight.Bold,
             fontSize = 25.sp
         )
 
         OutlinedButton(
-            onClick = { },
+            onClick = {},
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.LightGray,
                 contentColor = Color.Black
@@ -50,14 +53,21 @@ fun WifiListScreen() {
                 //와플 이미지 추가
                 contentDescription = ""
             )
-            Spacer(modifier = java.lang.reflect.Modifier.width(8.dp))
-            Text("Wi-Fi 이름 예시")
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Column() {
+                    Text(stringResource(id = R.string.wifi_example))
+                        (stringResource(id =R.string.store_example))
+                SelectionContainer {
+                        (stringResource(id =R.string.pw_example))
+                }
+            }
         }
 
         HomeButton(
             onClick = { startScreenBtnClick(Screen.HomeScreen) },
             backgroundColor = Color.Gray,
-            text = "홈화면으로"
+            text = stringResource(id = R.string.to_home)
         )
     }
 }
