@@ -3,6 +3,16 @@
     <string name="add_wifi">WI-FI 등록</string>
     <string name="find_wifi">WI-FI 찾기</string>
     <string name="go_home">홈으로</string>
+    <string name="wifi_name">WI-FI 이름</string>
+    <string name="wifi_name_hint">iptime5G</string>
+    <string name="wifi_pw">WI-FI PW</string>
+    <string name="wifi_pw_hint">와이파이 비번</string>
+    <string name="store_name">매장 이름</string>
+    <string name="store_name_hint">스타벅스 강남점</string>
+    <string name="finish">완료</string>
+    <string name="pin">PIN(선택)</string>
+    <string name="pin_hint">2자리 숫자</string>
+    <string name="add_more_wifi">WI-FI 정보 추가</string>
     <string name="app_description">와이파이 비밀번호 공유 서비스</string>
     <string name="look_for_wifi">WI-FI 검색중입니다</string>
     <string name="look_for_wifi_fail">WI-FI 검색 실패</string>

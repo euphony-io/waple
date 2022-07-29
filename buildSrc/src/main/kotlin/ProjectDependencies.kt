@@ -50,6 +50,10 @@ object ProjectDependencies {
 
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
+        const val JUNIT_JUPITER = "org.junit.jupiter:junit-jupiter-api:${Versions.JUNIT5}"
+        const val JUNIT_PARAMS = "org.junit.jupiter:junit-jupiter-params:${Versions.JUNIT5}"
+        const val JUNIT_ENGINE = "org.junit.jupiter:junit-jupiter-engine:${Versions.JUNIT5}"
+        const val JUNIT_TRUTH = "com.google.truth:truth:${Versions.JUNIT5_TRUTH}"
         const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINE}"
         const val ANDROIDX_JUNIT = "androidx.test.ext:junit:${Versions.ANDROIDX_JUNIT}"
         const val ANDROIDX_ESPRESSO =
@@ -82,6 +86,10 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_RUNTIME_LIVEDATA)
         implementation(Test.COROUTINE)
         testImplementation(Test.JUNIT)
+        testImplementation(Test.JUNIT_ENGINE)
+        testImplementation(Test.JUNIT_JUPITER)
+        testImplementation(Test.JUNIT_PARAMS)
+        testImplementation(Test.JUNIT_TRUTH)
         androidTestImplementation(Test.ANDROIDX_JUNIT)
         androidTestImplementation(Test.ANDROIDX_ESPRESSO)
     }
@@ -102,8 +110,8 @@ object ProjectDependencies {
         add("androidTestImplementation", dependency)
     }
 
-    fun DependencyHandler.api(dependency: String) {
-        add("api", dependency)
+    fun DependencyHandler.testRuntimeOnly(dependency: String) {
+        add("testRuntimeOnly", dependency)
     }
 
     fun DependencyHandler.coreLibraryDesugaring(dependency: String) {

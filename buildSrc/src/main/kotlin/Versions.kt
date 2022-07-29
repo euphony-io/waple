@@ -26,6 +26,8 @@ object Versions {
     const val COMPOSE_RUNTIME_LIVEDATA = "1.0.0-beta07"
 
     const val JUNIT = "4.13.2"
+    const val JUNIT5 = "5.8.1"
+    const val JUNIT5_TRUTH = "1.1.3"
     const val COROUTINE = "1.6.4"
     const val ANDROIDX_JUNIT = "1.1.3"
     const val ANDROIDX_ESPRESSO = "3.4.0"

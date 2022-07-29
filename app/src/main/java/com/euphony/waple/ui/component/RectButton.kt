@@ -11,10 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
-fun HomeButton(
+fun RectButton(
     onClick: () -> Unit,
     text: String,
     backgroundColor: Color = Yellow,
@@ -28,9 +29,11 @@ fun HomeButton(
         colors = ButtonDefaults.buttonColors(backgroundColor)
     ) {
         Text(
+            modifier = Modifier.padding(8.dp),
             text = text,
             color = Color.White,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            fontSize = 16.sp
         )
     }
 }
