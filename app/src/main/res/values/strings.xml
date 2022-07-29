@@ -2,5 +2,9 @@
     <string name="app_name">Waple</string>
     <string name="add_wifi">WI-FI 등록</string>
     <string name="find_wifi">WI-FI 찾기</string>
+    <string name="go_home">홈으로</string>
     <string name="app_description">와이파이 비밀번호 공유 서비스</string>
+    <string name="look_for_wifi">WI-FI 검색중입니다</string>
+    <string name="look_for_wifi_fail">WI-FI 검색 실패</string>
+    <string name="result">결과 확인</string>
 </resources>

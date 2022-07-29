@@ -8,17 +8,20 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.euphony.waple.add_wifi.ui.AddWifiScreen
+import com.euphony.waple.find_wifi.FindWifiViewModel
 import com.euphony.waple.find_wifi.ui.FindWifiScreen
+import com.euphony.waple.find_wifi_fail.ui.FindWifiFailScreen
 import com.euphony.waple.home.ui.HomeScreen
 import com.euphony.waple.ui.theme.WapleTheme
 
 @Composable
 fun NavController() {
     val navController = rememberNavController()
-
+    var viewModel = FindWifiViewModel()
     WapleTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize()
+
         ) {
             NavHost(
                 navController = navController,
@@ -27,7 +30,7 @@ fun NavController() {
             )
             {
                 composable(route = Screen.HomeScreen.route) {
-                    HomeScreen {
+                    HomeScreen(viewModel) {
                         navController.navigate(it.route)
                     }
                 }
@@ -35,7 +38,14 @@ fun NavController() {
                     AddWifiScreen()
                 }
                 composable(route = Screen.FindWifiScreen.route) {
-                    FindWifiScreen()
+                    FindWifiScreen(viewModel) {
+                        navController.navigate(it.route)
+                    }
+                }
+                composable(route = Screen.FindWifiFailScreen.route) {
+                    FindWifiFailScreen{
+                        navController.navigate(it.route)
+                    }
                 }
             }
         }

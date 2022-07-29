@@ -1,12 +1,10 @@
-package com.euphony.waple.find_wifi.ui
+package com.euphony.waple.find_wifi_fail.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,16 +15,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
-import com.euphony.waple.find_wifi.FindWifiViewModel
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
-fun FindWifiScreen(
-    viewModel: FindWifiViewModel,
-    startScreenBtnClick: (Screen) -> Unit
+fun FindWifiFailScreen(
+    startScreenBtnClick: (Screen) -> Unit,
 ) {
-    val listenResult by viewModel.listenResult.observeAsState("")
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -35,7 +30,7 @@ fun FindWifiScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = stringResource(id = R.string.look_for_wifi),
+            text = stringResource(id = R.string.look_for_wifi_fail),
             color = Yellow,
             fontWeight = FontWeight.Bold,
             fontSize = 36.sp
@@ -48,15 +43,9 @@ fun FindWifiScreen(
             contentDescription = "waffle2"
         )
         HomeButton(
-            onClick = {
-                if (listenResult.isNotEmpty()) {
-                    startScreenBtnClick(Screen.HomeScreen)
-                } else {
-                    startScreenBtnClick(Screen.FindWifiFailScreen)
-                }
-            },
+            onClick = { startScreenBtnClick(Screen.HomeScreen) },
             backgroundColor = Color.Gray,
-            text = stringResource(id = R.string.result)
+            text = stringResource(id = R.string.go_home)
         )
     }
 }

@@ -17,12 +17,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
+import com.euphony.waple.find_wifi.FindWifiViewModel
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
 fun HomeScreen(
-    startScreenBtnClick: (Screen) -> Unit,
+    viewModel: FindWifiViewModel,
+    startScreenBtnClick: (Screen) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -50,7 +52,10 @@ fun HomeScreen(
             text = stringResource(id = R.string.add_wifi)
         )
         HomeButton(
-            onClick = { startScreenBtnClick(Screen.FindWifiScreen) },
+            onClick = {
+                viewModel.listen()
+                startScreenBtnClick(Screen.FindWifiScreen)
+            },
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.find_wifi)
         )

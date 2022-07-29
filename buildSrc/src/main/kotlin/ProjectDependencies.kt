@@ -44,6 +44,8 @@ object ProjectDependencies {
             "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE_MATERIAL}"
         const val COMPOSE_VIEWMODEL =
             "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.COMPOSE_LIFECYCLE_VIEWMODEL}"
+        const val COMPOSE_RUNTIME_LIVEDATA =
+            "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE_RUNTIME_LIVEDATA}"
     }
 
     object Test {
@@ -77,6 +79,7 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_UI_TOOL_PREVIEW)
         implementation(Compose.COMPOSE_VIEWMODEL)
         implementation(Compose.COMPOSE_MATERIAL3)
+        implementation(Compose.COMPOSE_RUNTIME_LIVEDATA)
         implementation(Test.COROUTINE)
         testImplementation(Test.JUNIT)
         androidTestImplementation(Test.ANDROIDX_JUNIT)

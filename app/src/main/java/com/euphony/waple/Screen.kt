@@ -9,4 +9,5 @@ sealed class Screen(
     object HomeScreen : Screen("HomeScreen", R.string.app_name)
     object AddWifiScreen : Screen("AddWifiScreen", R.string.add_wifi)
     object FindWifiScreen : Screen("FindWifiScreen", R.string.find_wifi)
+    object FindWifiFailScreen : Screen("FindWifiFailScreen", R.string.look_for_wifi_fail)
 }
