@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
-import com.euphony.waple.ui.component.HomeButton
+import com.euphony.waple.ui.component.RectButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
@@ -42,7 +42,7 @@ fun FindWifiFailScreen(
             painter = painterResource(id = R.drawable.waffle2),
             contentDescription = "waffle2"
         )
-        HomeButton(
+        RectButton(
             onClick = { startScreenBtnClick(Screen.HomeScreen) },
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.go_home)
