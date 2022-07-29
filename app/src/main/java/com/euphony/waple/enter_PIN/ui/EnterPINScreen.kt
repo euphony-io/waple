@@ -10,12 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.euphony.waple.R
 import com.euphony.waple.Screen
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 
+@Preview
 @Composable
 fun EnterPINScreen(
     startScreenBtnClick: String,
@@ -35,18 +38,14 @@ fun EnterPINScreen(
             fontSize = 16.sp
         )
 
-        OutlinedTextField(
-            singleLine = true,
-            modifier = Modifier.fillMaxWidth(),
-            Spacer(modifier= Modifier.height(16.dp)),
-            maxLines = 1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = "PIN 번호",
-            placeHolder = "ex)1234"
-        )
+        TextFieldWithLabel(
+            titleResId = R.string.pin_num,
+            hintResId = R.string.pin_hint,
+            keyboardType = KeyboardType.Number
+        ){}
 
         HomeButton(
-            onClick = {startScreenBtnClick()},
+            onClick = {},
             backgroundColor = Yellow,
             text = "확인"
         )
