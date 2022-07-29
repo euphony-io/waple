@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.euphony.waple.R
 import com.euphony.waple.Screen
 import com.euphony.waple.ui.component.HomeButton
@@ -65,7 +66,7 @@ fun WifiListScreen() {
         }
 
         HomeButton(
-            onClick = { startScreenBtnClick(Screen.HomeScreen) },
+            onClick = {},
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.to_home)
         )
