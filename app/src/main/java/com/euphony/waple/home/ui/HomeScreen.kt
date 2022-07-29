@@ -1,10 +1,7 @@
 package com.euphony.waple.home.ui
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +15,7 @@ import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
 import com.euphony.waple.find_wifi.FindWifiViewModel
-import com.euphony.waple.ui.component.HomeButton
+import com.euphony.waple.ui.component.RectButton
 import com.euphony.waple.ui.theme.Yellow
 
 @Composable
@@ -46,12 +43,13 @@ fun HomeScreen(
             color = Color.Gray,
             fontWeight = FontWeight.Bold
         )
-        HomeButton(
+        RectButton(
             onClick = { startScreenBtnClick(Screen.AddWifiScreen) },
             backgroundColor = Yellow,
             text = stringResource(id = R.string.add_wifi)
         )
-        HomeButton(
+        Spacer(modifier = Modifier.height(20.dp))
+        RectButton(
             onClick = {
                 viewModel.listen()
                 startScreenBtnClick(Screen.FindWifiScreen)
