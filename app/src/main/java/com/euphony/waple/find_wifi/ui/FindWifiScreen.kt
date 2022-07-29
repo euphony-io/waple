@@ -19,7 +19,6 @@ import com.euphony.waple.Screen
 import com.euphony.waple.find_wifi.FindWifiViewModel
 import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
-import kotlinx.coroutines.delay
 
 @Composable
 fun FindWifiScreen(
@@ -27,13 +26,8 @@ fun FindWifiScreen(
     startScreenBtnClick: (Screen) -> Unit
 ) {
     val listenResult by viewModel.listenResult.observeAsState("")
-    var ticks by remember { mutableStateOf(0) }
-    LaunchedEffect(Unit) {
-        while (true) {
-            delay(1000)
-            ticks++
-        }
-    }
+    val listenFinished by viewModel.listenFinished.observeAsState(false)
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -54,8 +48,7 @@ fun FindWifiScreen(
             painter = painterResource(id = R.drawable.waffle2),
             contentDescription = "waffle2"
         )
-
-        if (ticks >= 10) {
+        if (listenFinished) {
             HomeButton(
                 onClick = {
                     if (listenResult.isNotEmpty()) {
