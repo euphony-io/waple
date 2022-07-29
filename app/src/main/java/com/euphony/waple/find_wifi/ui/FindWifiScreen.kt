@@ -43,6 +43,7 @@ fun FindWifiScreen(
         )
         Image(
             modifier = Modifier
+                .padding(vertical = 40.dp)
                 .width(80.dp)
                 .height(80.dp),
             painter = painterResource(id = R.drawable.waffle2),
