@@ -25,6 +25,7 @@ object Versions {
     const val COMPOSE_LIFECYCLE_VIEWMODEL = "1.0.0-alpha07"
     const val COMPOSE_RUNTIME_LIVEDATA = "1.0.0-beta07"
 
+    const val CORE_TEST = "2.1.0"
     const val JUNIT = "4.13.2"
     const val JUNIT5 = "5.8.1"
     const val JUNIT5_TRUTH = "1.1.3"
