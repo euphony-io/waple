@@ -38,3 +38,10 @@ Waple is a service that helps fast and easy Wi-Fi password sharing using sound c
 2. When the user presses `Find Wi-Fi`, the user checks the list of providers who have registered their passwords in the waffle.
 
 3. If the user selects the Wi-Fi he or she wants, the password of the Wi-Fi is obtained.
+
+## Screenshot
+<img width="300px" src="https://github.com/euphony-io/waple/blob/readme/screenshot/screenshot1.jpg" />
+<img width="300px" src="https://github.com/euphony-io/waple/blob/readme/screenshot/screenshot2.jpg" />
+<img width="300px" src="https://github.com/euphony-io/waple/blob/readme/screenshot/screenshot3.jpg" />
+<img width="300px" src="https://github.com/euphony-io/waple/blob/readme/screenshot/screenshot4.jpg" />
+<img width="300px" src="https://github.com/euphony-io/waple/blob/readme/screenshot/screenshot5.jpg" />
