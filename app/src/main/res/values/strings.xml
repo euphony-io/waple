@@ -18,4 +18,7 @@
     <string name="look_for_wifi_fail">WI-FI 검색 실패</string>
     <string name="result">결과 확인</string>
     <string name="cancel">검색 취소</string>
+    <string name="store_name_empty">매장 이름을 입력해주세요!</string>
+    <string name="wifi_info_empty">하나 이상의 와이파이 정보를 입력해주세요!</string>
+    <string name="pin_length_low">PIN은 2자리의 숫자로 입력해야 합니다.</string>
 </resources>
