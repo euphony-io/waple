@@ -8,8 +8,7 @@ import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.MaterialTheme.colors
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,17 +17,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.euphony.waple.R
 import com.euphony.waple.Screen
+import com.euphony.waple.WIFI_MIN_COUNT
 import com.euphony.waple.enter_PIN.ui.TextFieldWithLabel
-import com.euphony.waple.ui.component.HomeButton
 import com.euphony.waple.ui.theme.Yellow
 import com.euphony.waple.wifi_list.WifiListViewModel
 import com.euphony.waple.ui.component.BasicDivider
+import com.euphony.waple.ui.component.RectButton
+
+import androidx.compose.material.Text
+
 
 @Composable
 fun WifiListScreen() {
@@ -81,15 +83,23 @@ fun WifiListScreen() {
                         RectButton(
                             onClick = { },
                             backgroundColor = Yellow,
-                            text = stringResource(id = R.string.store_name_hint),
-                            text = stringResource(id =R.string.pw_example),
-                            Spacer(modifier = Modifier.height(20.dp)))
+                            text = stringResource(id = R.string.store_name_hint)
+                        )
                             }
             }
         }
 
         RectButton(
-            onClick = { startScreenBtnClick(Screen.HomeScreen) },
+            onClick = {
+                startScreenBtnClick(Screen.HomeScreen)
+            },
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.go_home)
         )}}}}
+
+fun startScreenBtnClick(homeScreen: Screen.HomeScreen) {
+
+}
+
+
+
