@@ -2,7 +2,6 @@ package com.euphony.waple.enter_PIN.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,10 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.euphony.waple.R
 import com.euphony.waple.Screen
-import com.euphony.waple.ui.component.HomeButton
+import com.euphony.waple.ui.component.RectButton
 import com.euphony.waple.ui.theme.Yellow
 
-@Preview
 @Composable
 fun EnterPINScreen(
     startScreenBtnClick: String,
@@ -44,8 +42,8 @@ fun EnterPINScreen(
             keyboardType = KeyboardType.Number
         ){}
 
-        HomeButton(
-            onClick = {},
+        RectButton(
+            onClick = { },
             backgroundColor = Yellow,
             text = "확인"
         )
