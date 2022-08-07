@@ -49,6 +49,7 @@ object ProjectDependencies {
     }
 
     object Test {
+        const val CORE = "androidx.arch.core:core-testing:${Versions.CORE_TEST}"
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
         const val JUNIT_JUPITER = "org.junit.jupiter:junit-jupiter-api:${Versions.JUNIT5}"
         const val JUNIT_PARAMS = "org.junit.jupiter:junit-jupiter-params:${Versions.JUNIT5}"
@@ -85,7 +86,8 @@ object ProjectDependencies {
         implementation(Compose.COMPOSE_MATERIAL3)
         implementation(Compose.COMPOSE_RUNTIME_LIVEDATA)
         implementation(Test.COROUTINE)
-        testImplementation(Test.JUNIT)
+        implementation(Test.JUNIT)
+        testImplementation(Test.CORE)
         testImplementation(Test.JUNIT_ENGINE)
         testImplementation(Test.JUNIT_JUPITER)
         testImplementation(Test.JUNIT_PARAMS)
