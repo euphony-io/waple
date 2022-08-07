@@ -43,7 +43,7 @@ fun NavController() {
 
                 }
                 composable(route = Screen.EnterPINScreen.route) {
-                    EnterPINScreen("navController")
+                    EnterPINScreen()
                 }
                 composable(route = Screen.WifiListScreen.route) {
                     WifiListScreen()
