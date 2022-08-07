@@ -28,17 +28,14 @@ import com.euphony.waple.ui.theme.Yellow
 import com.euphony.waple.wifi_list.WifiListViewModel
 import com.euphony.waple.ui.component.BasicDivider
 import com.euphony.waple.ui.component.RectButton
-
 import androidx.compose.material.Text
 
-
 @Composable
-fun WifiListScreen() {
-
-    val viewModel = WifiListViewModel()
-
+fun WifiListScreen(
+    viewModel : WifiListViewModel,
+    startScreenBtnClick: (Screen) -> Unit
+) {
     var wifiListCount by remember { mutableStateOf(WIFI_MIN_COUNT) }
-
     val scrollState = rememberScrollState()
 
     Column(
@@ -68,7 +65,8 @@ fun WifiListScreen() {
                     modifier = Modifier
                         .padding(12.dp)
                         .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center)
+                    horizontalArrangement = Arrangement.Center
+                )
                     {
                     Icon(
                         painter = painterResource(id = R.drawable.waffle2),
@@ -85,9 +83,9 @@ fun WifiListScreen() {
                             backgroundColor = Yellow,
                             text = stringResource(id = R.string.store_name_hint)
                         )
-                            }
+                    }
+                }
             }
-        }
 
         RectButton(
             onClick = {
@@ -95,10 +93,10 @@ fun WifiListScreen() {
             },
             backgroundColor = Color.Gray,
             text = stringResource(id = R.string.go_home)
-        )}}}}
-
-fun startScreenBtnClick(homeScreen: Screen.HomeScreen) {
-
+        )
+            }
+        }
+    }
 }
 
 
