@@ -4,24 +4,25 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.euphony.waple.add_wifi.ui.AddWifiScreen
-import com.euphony.waple.find_wifi.FindWifiViewModel
+import com.euphony.waple.enter_PIN.ui.EnterPINScreen
 import com.euphony.waple.find_wifi.ui.FindWifiScreen
-import com.euphony.waple.find_wifi_fail.ui.FindWifiFailScreen
 import com.euphony.waple.home.ui.HomeScreen
 import com.euphony.waple.ui.theme.WapleTheme
+import com.euphony.waple.wifi_list.ui.WifiListScreen
 
+@Preview
 @Composable
 fun NavController() {
     val navController = rememberNavController()
-    var viewModel = FindWifiViewModel()
+
     WapleTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize()
-
         ) {
             NavHost(
                 navController = navController,
@@ -30,7 +31,7 @@ fun NavController() {
             )
             {
                 composable(route = Screen.HomeScreen.route) {
-                    HomeScreen(viewModel) {
+                    HomeScreen {
                         navController.navigate(it.route)
                     }
                 }
@@ -38,16 +39,17 @@ fun NavController() {
                     AddWifiScreen()
                 }
                 composable(route = Screen.FindWifiScreen.route) {
-                    FindWifiScreen(viewModel) {
-                        navController.navigate(it.route)
-                    }
+                    FindWifiScreen()
+
                 }
-                composable(route = Screen.FindWifiFailScreen.route) {
-                    FindWifiFailScreen{
-                        navController.navigate(it.route)
-                    }
+                composable(route = Screen.EnterPINScreen.route) {
+                    EnterPINScreen()
+                }
+                composable(route = Screen.WifiListScreen.route) {
+                    WifiListScreen()
                 }
             }
         }
     }
 }
+

@@ -21,4 +21,8 @@
     <string name="store_name_empty">매장 이름을 입력해주세요!</string>
     <string name="wifi_info_empty">하나 이상의 와이파이 정보를 입력해주세요!</string>
     <string name="pin_length_low">PIN은 2자리의 숫자로 입력해야 합니다.</string>
+    <string name="available_wifi">사용 가능한 WI-FI 목록</string>
+    <string name="pin_num">PIN</string>
+    <string name="enter_PIN">PIN 입력</string>
+    <string name="wifi_list">WI-FI 목록</string>
 </resources>
